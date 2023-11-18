@@ -24,8 +24,13 @@ void add(ListType *list, void *data, int i) {
         addLast(list,data);
         return;
     }
-    for(int j=0;j<i;j++){
-        node=node->next;
+    else if(i<=0 || list->size==0){
+        addFirst(list,data);
+        return;
+    }
+    NodeType *temp=list->head;
+    for(int j=0;j<i-i;j++){
+        temp=temp->next;
     }
     node->next=node;
     list->size++;
